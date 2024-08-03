@@ -1,12 +1,17 @@
 const webpack = require('webpack');
 const path = require('path');
-const fs = require("fs");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+// const {
+// 	BundleAnalyzerPlugin
+// } = require('webpack-bundle-analyzer');
 
 module.exports = {
-	mode: 'development',
+	mode: 'production',
 	context: path.resolve(__dirname, 'src'),
+
 	entry: {
 		index: {
 			import: './index.js',
@@ -15,18 +20,15 @@ module.exports = {
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
+		filename: 'js/[name].js',
+		publicPath: process.env.PUBLIC_URL,
 		clean: true
 	},
-	devServer: {
-		// server: {
-		// 	type: 'https',
-		// 	options: {
-		// 		key: fs.readFileSync('./ssl/key.pem'),
-		// 		cert: fs.readFileSync('./ssl/cert.pem'),
-		// 	},
-		// },
-		port: 3000,
-		historyApiFallback: true
+	optimization: {
+		minimizer: [
+			new CssMinimizerPlugin(),
+			new TerserPlugin()
+		]
 	},
 	module: {
 		rules: [
@@ -71,7 +73,7 @@ module.exports = {
 				generator: {
 					filename: 'img/[name][ext]'
 				}
-			}
+			},
 		]
 	},
 	plugins: [
@@ -81,6 +83,7 @@ module.exports = {
 		}),
 		new MiniCssExtractPlugin({
 			filename: 'css/[name].css'
-		})
+		}),
+		// new BundleAnalyzerPlugin()
 	]
 };
