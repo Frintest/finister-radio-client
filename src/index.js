@@ -1,9 +1,14 @@
 import axios from "axios";
 
-// const api = "http://localhost:3002/song";
-const api = "https://finister-radio.servermc.ru:3002/song";
+const PORT = "3002";
 
-const response = await axios.post(api);
+const instance = axios.create({
+	baseURL: `https://airmonitor.servermc.ru:${PORT}`,
+	// baseURL: `http://localhost:${PORT}`,
+});
+
+const response = await instance.get("/song");
 const songUrl = response.data;
+
 const audio = document.querySelector("#audio");
 audio.src = songUrl;
