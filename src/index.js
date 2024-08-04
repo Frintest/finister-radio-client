@@ -1,18 +1,19 @@
 import axios from "axios";
+import "./assets/logo.png";
 
 const PORT = 3002;
 let baseURL = "";
 
 if (process.env.NODE_ENV === "development") {
-   baseURL = `http://localhost:${PORT}`;
+	baseURL = `http://localhost:${PORT}`;
 }
 
 if (process.env.NODE_ENV === "production") {
-   baseURL = `https://airmonitor.servermc.ru:${PORT}`;
+	baseURL = `https://airmonitor.servermc.ru:${PORT}`;
 }
 
 const instance = axios.create({
-   baseURL,
+	baseURL,
 });
 
 const response = await instance.get("/song");
