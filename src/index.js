@@ -1,5 +1,6 @@
 import axios from "axios";
 import "./assets/logo.png";
+import "./assets/favicon.png";
 
 const PORT = 3002;
 let baseURL = "";
