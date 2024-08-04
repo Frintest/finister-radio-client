@@ -17,7 +17,15 @@ const instance = axios.create({
 });
 
 const response = await instance.get("/song");
-const songUrl = response.data;
+const songData = JSON.parse(response.data);
+const songName = songData.songName;
+const songSrc = songData.songSrc;
+const authorName = songData.authorName;
 
+const songNameHtml = document.querySelector(".songName");
+const authorNameHtml = document.querySelector(".authorName");
 const audio = document.querySelector("#audio");
-audio.src = songUrl;
+
+songNameHtml.innerHTML = songName;
+authorNameHtml.innerHTML = authorName;
+audio.src = songSrc;
