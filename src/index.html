@@ -9,44 +9,134 @@
    </head>
    <body>
       <main>
-         <div>
-            <img
-               src="./img/logo.png"
-               width="600"
-               alt="логотип Финистер Радио"
-            />
-         </div>
-         <audio id="audio" controls></audio>
-         <p>
-            <b>Песня: </b>
-            <span class="songName"></span>
-         </p>
-         <p>
-            <b>Автор: </b>
-            <span class="authorName"></span>
-         </p>
+         <div class="wrapper">
+            <div class="cassette">
+               <div class="cassette__player">
+                  <img
+                     class="cassette"
+                     src="./img/cassette-wrap.svg"
+                     alt="Кассетный проигрыватель"
+                  />
+                  <img
+                     src="./img/cassette-disc.png"
+                     class="cassette__disc cassette__disc--left"
+                     width="32.5"
+                  />
+                  <img
+                     src="./img/cassette-disc.png"
+                     class="cassette__disc cassette__disc--right"
+                     width="32.5"
+                  />
+                  <img src="./img/glass.png" class="cassette__glass" />
 
-         <!-- <ul>
-            <li>1. РСЛНДНГТВЗМ - Gothic Castle Delirium,</li>
-            <li>2. Дневник школьницы - Дневник школьницы,</li>
-            <li>3. Entelechia - Metanoia</li>
-            <li>4. Fleckentarn - Deuil Septembre</li>
-            <li>5. Kuutamo/КИСТЕНЬ - Звёздная пыль и сырая земля</li>
-            <li>6. Семаргл - Семаргл</li>
-            <li>7. СОЛНЦЕСЕРДИЕ - УЗМОРСКИЕ СУМЕРКИ</li>
-         </ul> -->
-         <p>Музыка взята с лейбла tapes for slaves</p>
-         <p>
-            Ссылка на лейбл -
-            <a href="https://vk.com/tapesforslaves">
-               https://vk.com/tapesforslaves
-            </a>
-         </p>
-         <p>
-            Представитель лейбла <strong>tapes for slaves</strong> разрешил
-            использовать музыку с этого лейбла на онлайн радио
-            <strong>"Финистер Радио"</strong>
-         </p>
+                  <ul class="cassette__controls">
+                     <li class="cassette__button">
+                        <span class="cassette__button-name">Запись</span>
+                        <button
+                           class="cassette__button-key"
+                           aria-name="play"
+                        ></button>
+                     </li>
+
+                     <li class="cassette__button">
+                        <span class="cassette__button-name">Пауза</span>
+                        <button
+                           class="cassette__button-key"
+                           aria-name="pause"
+                        ></button>
+                     </li>
+
+                     <li class="cassette__button">
+                        <div class="cassette__button-name-wrap">
+                           <span class="cassette__button-name">Увел. </span>
+                           <svg
+                              class="volume-icon"
+                              width="12"
+                              height="12"
+                              viewBox="0 0 12 12"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                           >
+                              <path
+                                 d="M1.5 5.00102V7.00102C1.5 7.27602 1.725 7.50102 2 7.50102H3.5L5.145 9.14602C5.46 9.46102 6 9.23602 6 8.79102V3.20602C6 2.76102 5.46 2.53602 5.145 2.85102L3.5 4.50102H2C1.725 4.50102 1.5 4.72602 1.5 5.00102ZM8.25 6.00102C8.25 5.11602 7.74 4.35602 7 3.98602V8.01102C7.74 7.64602 8.25 6.88602 8.25 6.00102ZM7 2.22602V2.32602C7 2.51602 7.125 2.68102 7.3 2.75102C8.59 3.26602 9.5 4.53102 9.5 6.00102C9.5 7.47102 8.59 8.73602 7.3 9.25102C7.12 9.32102 7 9.48602 7 9.67602V9.77602C7 10.091 7.315 10.311 7.605 10.201C9.3 9.55602 10.5 7.92102 10.5 6.00102C10.5 4.08102 9.3 2.44602 7.605 1.80102C7.315 1.68602 7 1.91102 7 2.22602Z"
+                                 fill="#0F172A"
+                              />
+                           </svg>
+                        </div>
+                        <button
+                           class="cassette__button-key"
+                           aria-name="volume-up"
+                        ></button>
+                     </li>
+
+                     <li class="cassette__button">
+                        <div class="cassette__button-name-wrap">
+                           <span class="cassette__button-name">Умен.</span>
+                           <svg
+                              class="volume-icon"
+                              width="12"
+                              height="12"
+                              viewBox="0 0 12 12"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                           >
+                              <path
+                                 d="M1.5 5.00102V7.00102C1.5 7.27602 1.725 7.50102 2 7.50102H3.5L5.145 9.14602C5.46 9.46102 6 9.23602 6 8.79102V3.20602C6 2.76102 5.46 2.53602 5.145 2.85102L3.5 4.50102H2C1.725 4.50102 1.5 4.72602 1.5 5.00102ZM8.25 6.00102C8.25 5.11602 7.74 4.35602 7 3.98602V8.01102C7.74 7.64602 8.25 6.88602 8.25 6.00102ZM7 2.22602V2.32602C7 2.51602 7.125 2.68102 7.3 2.75102C8.59 3.26602 9.5 4.53102 9.5 6.00102C9.5 7.47102 8.59 8.73602 7.3 9.25102C7.12 9.32102 7 9.48602 7 9.67602V9.77602C7 10.091 7.315 10.311 7.605 10.201C9.3 9.55602 10.5 7.92102 10.5 6.00102C10.5 4.08102 9.3 2.44602 7.605 1.80102C7.315 1.68602 7 1.91102 7 2.22602Z"
+                                 fill="#0F172A"
+                              />
+                           </svg>
+                        </div>
+                        <button
+                           class="cassette__button-key"
+                           aria-name="volume-down"
+                        ></button>
+                     </li>
+                  </ul>
+               </div>
+               <!-- <audio id="audio" controls></audio> -->
+            </div>
+
+            <ul class="content__list">
+               <li class="content__item content__item--label">
+                  <h2 class="content__name">Лейбл:</h2>
+                  <div class="content__wrap content__value">
+                     <h1 class="label__name">tapes for slaves</h1>
+                     <a
+                        class="content__link"
+                        href="https://vk.com/tapesforslaves"
+                        >https://vk.com/tapesforslaves</a
+                     >
+                     <a class="content__link" href="https://t.me/tapesforslaves"
+                        >https://t.me/tapesforslaves</a
+                     >
+                  </div>
+               </li>
+
+               <li class="content__item content__item--song">
+                  <div class="content__wrap">
+                     <h2 class="content__name">Песня:</h2>
+                     <p class="content__value songName">Entering the Castle</p>
+                  </div>
+
+                  <div class="content__wrap">
+                     <h2 class="content__name">Автор:</h2>
+                     <p class="content__value authorName">РСЛНДНГТВЗМ</p>
+                  </div>
+               </li>
+
+               <li class="content__item">
+                  <div class="content__wrap">
+                     <h2 class="content__name">Разработчик:</h2>
+                     <a
+                        class="content__value content__link"
+                        href="https://t.me/frunkers"
+                     >
+                        https://t.me/frunkers</a
+                     >
+                  </div>
+               </li>
+            </ul>
+         </div>
       </main>
    </body>
 </html>

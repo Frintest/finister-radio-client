@@ -1,0 +1,174 @@
+@import "./reset.css";
+@import "./fonts.css";
+
+.wrapper {
+   display: flex;
+}
+
+/* cassette */
+.cassette__player {
+   position: relative;
+}
+
+@keyframes discRotate {
+   from {
+      transform: rotate(-360deg);
+   }
+}
+
+.cassette__disc {
+   position: absolute;
+   top: 84px;
+   animation: 6s infinite linear discRotate;
+}
+
+.cassette__disc--left {
+   left: 183px;
+}
+
+.cassette__disc--right {
+   right: 183px;
+}
+
+.cassette__glass {
+   position: absolute;
+   top: 8px;
+   left: 18px;
+}
+
+.cassette__controls {
+   display: flex;
+   position: absolute;
+   left: 50%;
+   transform: translate(-50%, 0);
+   z-index: 10;
+   top: 265px;
+}
+
+.cassette__controls::before {
+   content: "";
+   position: absolute;
+   width: calc(100% + 24px);
+   height: 95px;
+   top: 22px;
+   left: -12px;
+   background-color: #0f172a;
+   border-top-left-radius: 2px;
+   border-top-right-radius: 2px;
+}
+
+.cassette__button {
+   z-index: 11;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.cassette__button + .cassette__button {
+   margin-left: 8px;
+}
+
+.cassette__button-name-wrap {
+   display: flex;
+   align-items: center;
+}
+
+.volume-icon {
+   margin-top: 1px;
+   margin-left: 2px;
+}
+
+.cassette__button-name {
+   font-size: 13px;
+   font-weight: 500;
+   color: #0f172a;
+}
+
+.cassette__button-key {
+   width: 60px;
+   height: 85px;
+   margin-top: 13px;
+   background-color: #cbd5e1;
+   border-radius: 6px;
+   border: none;
+   cursor: pointer;
+   position: relative;
+}
+
+.cassette__button-key::before {
+   content: "";
+   position: absolute;
+   width: 60px;
+   height: 85px;
+   top: 5px;
+   left: 2px;
+   border-radius: 6px;
+   background-color: #94a3b8;
+   z-index: -1;
+}
+
+.cassette__button-key.active {
+   height: 90px;
+   background-color: #94a3b8;
+}
+
+.cassette__button-key.active.cassette__button-key::before {
+   display: none;
+}
+
+/* content */
+.content__list {
+   margin-left: 50px;
+}
+
+.content__item + .content__item {
+   margin-top: 50px;
+}
+
+.content__wrap {
+   display: flex;
+}
+
+.content__value {
+   margin-left: 10px;
+}
+
+.content__name {
+   font-size: 16px;
+   font-weight: 700;
+   color: #475569;
+}
+
+.content__link {
+   display: block;
+   font-weight: 500;
+   color: #64748b;
+   transition: 0.3s;
+}
+
+.content__link:hover {
+   color: #475569;
+}
+
+.content__item--label > .content__wrap {
+   flex-direction: column;
+}
+
+.content__item--label > .content__wrap {
+   margin-top: 8px;
+}
+
+.content__item--label > .content__wrap > .content__link {
+   margin-top: 12px;
+}
+
+.content__item--song > .content__wrap {
+   margin-top: 20px;
+}
+
+.label__name {
+   font-size: 32px;
+   font-weight: 700;
+   color: #1d4ed8;
+   margin-bottom: 16px;
+}
