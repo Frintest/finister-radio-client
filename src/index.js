@@ -1,5 +1,8 @@
 import axios from "axios";
+import "./css/reset.css";
+import "./css/fonts.css";
 import "./css/main.css";
+import "./css/media.css";
 import "./assets/images/cassette-wrap.svg";
 import "./assets/images/cassette-disc.png";
 import "./assets/images/glass.png";
@@ -39,8 +42,8 @@ const btnPlay = document.querySelector(
 const btnPause = document.querySelector(
    ".cassette__button-key[aria-name='pause']",
 );
-// const volumeUp = document.querySelector(".cassette__button-key[aria-name='volume-up']");
-// const volumeDown = document.querySelector(".cassette__button-key[aria-name='volume-down']");
+const cassetteLeftDisc = document.querySelector(".cassette__disc--left");
+const cassetteRightDisc = document.querySelector(".cassette__disc--right");
 
 buttons.forEach((btn) => {
    btn.addEventListener("click", () => {
@@ -48,20 +51,21 @@ buttons.forEach((btn) => {
 
       if (
          (btnType === "play" && !btn.classList.contains("active")) ||
-         (btnType === "pause" && btn.classList.contains("active"))
+         (btnType === "pause" &&
+            btn.classList.contains("active") &&
+            btnPlay.classList.contains("active"))
       ) {
          audio.play();
+         cassetteLeftDisc.classList.add("active");
+         cassetteRightDisc.classList.add("active");
       } else if (
          (btnType === "pause" && !btn.classList.contains("active")) ||
          (btnType === "play" && btn.classList.contains("active"))
       ) {
          audio.pause();
+         cassetteLeftDisc.classList.remove("active");
+         cassetteRightDisc.classList.remove("active");
       }
-
-      // btnPlay.classList.remove("active");
-      // btnPause.classList.remove("active");
-      // volumeUp.classList.remove("active");
-      // volumeDown.classList.remove("active");
 
       if (btn.classList.contains("active")) {
          btn.classList.remove("active");

@@ -1,0 +1,18 @@
+@media (max-width: 900px) {
+   .wrapper {
+      flex-direction: column;
+   }
+
+   .cassette {
+      order: 1;
+      margin-top: 20px;
+   }
+
+   .content__list {
+      margin-left: 0px;
+   }
+
+   .content__item + .content__item {
+      margin-top: 35px;
+   }
+}

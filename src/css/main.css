@@ -1,6 +1,3 @@
-@import "./reset.css";
-@import "./fonts.css";
-
 .wrapper {
    display: flex;
 }
@@ -11,14 +8,17 @@
 }
 
 @keyframes discRotate {
-   from {
-      transform: rotate(-360deg);
+   to {
+      transform: rotate(1turn);
    }
 }
 
 .cassette__disc {
    position: absolute;
    top: 84px;
+}
+
+.cassette__disc.active {
    animation: 6s infinite linear discRotate;
 }
 
