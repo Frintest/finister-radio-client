@@ -49,7 +49,7 @@
 
    .cassette__glass {
       width: 372px;
-      top: 11px;
+      top: 6px;
       left: 14px;
    }
 
@@ -77,8 +77,8 @@
    }
 
    .cassette__glass {
-      width: 335px;
-      top: 10px;
+      width: 336px;
+      top: 5px;
       left: 13px;
    }
 
@@ -105,6 +105,11 @@
       height: 73px;
    }
 
+   .cassette__button-key.active {
+      width: 56px;
+      height: 78px;
+   }
+
    .cassette__button-key {
       margin-top: 16px;
    }
@@ -123,9 +128,10 @@
    }
 
    .content__item + .content__item {
-      margin-top: 20px;
+      margin-top: 24px;
+   }
+
+   .label__links {
+      margin-top: 16px;
    }
 }
-
-/* @media (max-width: 390px) {
-} */

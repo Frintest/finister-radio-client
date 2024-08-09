@@ -174,7 +174,7 @@
 }
 
 .content__item--song > .content__wrap + .content__wrap {
-   margin-top: 16px;
+   margin-top: 12px;
 }
 
 .content__item--song .content__value {
