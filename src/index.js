@@ -7,6 +7,4 @@ import "./assets/images/cassette-disc.png";
 import "./assets/images/cassette-glass.png";
 import { appCreate } from "./app.js";
 
-(async () => {
-   await appCreate();
-})();
+appCreate();

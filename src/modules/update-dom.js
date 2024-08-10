@@ -2,6 +2,7 @@ import {
    addCassetteAnimation,
    removeCassetteAnimation,
 } from "./animate-cassette.js";
+import { API } from "../api.js";
 
 const btnPlay = document.querySelector(".cassette__button-key--play");
 
@@ -16,6 +17,11 @@ const createOnClickPlayBtn = (audio) => {
       } else {
          btnPlay.classList.add("active");
          if (audio.paused) {
+            API.sendCurrentTimeTrigger();
+            const getCurrentTime = (currentTime) => {
+               audio.currentTime = currentTime;
+            };
+            API.requestCurrentTime(getCurrentTime);
             audio.play();
          }
          addCassetteAnimation();
@@ -26,8 +32,8 @@ const createOnClickPlayBtn = (audio) => {
 let onClickPlayBtn = null;
 
 export const addHandlerClickPlayBtn = (audio) => {
-   onClickPlayBtn = createOnClickPlayBtn(audio);
    if (btnPlay) {
+      onClickPlayBtn = createOnClickPlayBtn(audio);
       btnPlay.addEventListener("click", onClickPlayBtn);
    }
 };

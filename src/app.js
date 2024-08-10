@@ -5,7 +5,7 @@ import {
    removeHandlerClickPlayBtn,
 } from "./modules/update-dom.js";
 
-export const appCreate = async () => {
+export const appCreate = () => {
    const btnPlay = document.querySelector(".cassette__button-key--play");
    let audio = null;
    const updateAudioData = (audioData) => {
@@ -30,5 +30,5 @@ export const appCreate = async () => {
       addHandlerClickPlayBtn(audio);
    };
 
-   await API.requestAudio(updateAudioData);
+   API.requestAudio(updateAudioData);
 };

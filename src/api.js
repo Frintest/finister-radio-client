@@ -18,9 +18,19 @@ socket.on("connect", () => {
 });
 
 export const API = {
-   requestAudio: async (callback) => {
+   requestAudio: (callback) => {
       socket.on("audio:request", (audioData) => {
          callback(audioData);
+      });
+   },
+
+   sendCurrentTimeTrigger: () => {
+      socket.emit("current-time-trigger:send");
+   },
+
+   requestCurrentTime: (callback) => {
+      socket.on("current-time:request", (currentTime) => {
+         callback(currentTime);
       });
    },
 };
