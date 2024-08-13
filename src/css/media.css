@@ -1,6 +1,7 @@
-@media (max-width: 900px) {
+@media (max-width: 760px) {
    .container {
       flex-direction: column;
+      align-items: flex-start;
    }
 
    .cassette {
@@ -17,7 +18,7 @@
    }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 420px) {
    .container {
       padding: 0 10px;
    }
@@ -44,83 +45,59 @@
    }
 
    .cassette {
-      width: 400px;
+      width: 320px;
    }
 
    .cassette__glass {
-      width: 372px;
-      top: 6px;
-      left: 14px;
+      width: 303px;
+      top: 10px;
+      left: 9px;
    }
 
    .cassette__disc {
-      width: 25px;
-      top: 66px;
+      width: 27.5px;
+      top: 62.5px;
    }
 
    .cassette__disc--left {
-      left: 144px;
+      left: 99px;
    }
 
    .cassette__disc--right {
-      right: 144px;
+      right: 98px;
    }
 
-   .cassette__controls {
-      top: 183px;
+   .cassette__button-play {
+      bottom: 12px;
    }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 350px) {
    .cassette {
-      width: 360px;
+      width: 300px;
    }
 
    .cassette__glass {
-      width: 336px;
-      top: 5px;
-      left: 13px;
+      width: 284px;
+      top: 9.5px;
+      left: 8px;
    }
 
    .cassette__disc {
-      width: 21.7px;
-      top: 60px;
+      width: 24.5px;
+      top: 59px;
    }
 
    .cassette__disc--left {
-      left: 130px;
+      left: 93px;
    }
 
    .cassette__disc--right {
-      right: 130px;
+      right: 92px;
    }
 
-   .cassette__controls {
-      top: 164px;
-   }
-
-   .cassette__button-key,
-   .cassette__button-key::before {
-      width: 56px;
-      height: 73px;
-   }
-
-   .cassette__button-key.active {
-      width: 56px;
-      height: 78px;
-   }
-
-   .cassette__button-key {
-      margin-top: 16px;
-   }
-
-   .cassette__controls::before {
-      height: 82px;
-      top: 23px;
-   }
-
-   .cassette__button-name {
-      font-size: 12px;
+   .cassette__button-play {
+      bottom: 10px;
    }
 
    .cassette {

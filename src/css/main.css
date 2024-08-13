@@ -1,5 +1,6 @@
 .container {
    display: flex;
+   align-items: center;
    padding: 0 20px;
 }
 
@@ -14,107 +15,59 @@
    }
 }
 
-.cassette__disc {
-   position: absolute;
-   top: 84px;
-}
-
 .cassette__disc.active {
    animation: 6s infinite linear discRotate;
 }
 
+.cassette__disc {
+   position: absolute;
+   top: 71px;
+}
+
 .cassette__disc--left {
-   left: 183px;
+   left: 113px;
 }
 
 .cassette__disc--right {
-   right: 183px;
+   right: 112px;
 }
 
 .cassette__glass {
    position: absolute;
-   top: 8px;
-   left: 18px;
+   top: 12px;
+   left: 10px;
 }
 
-.cassette__controls {
+.cassette__button-play {
+   width: 78px;
+   height: 62px;
    display: flex;
+   justify-content: center;
+   align-items: center;
    position: absolute;
    left: 50%;
    transform: translate(-50%, 0);
-   z-index: 10;
-   top: 265px;
-}
-
-.cassette__controls::before {
-   content: "";
-   position: absolute;
-   width: calc(100% + 24px);
-   height: 95px;
-   top: 22px;
-   left: -12px;
-   background-color: #0f172a;
-   border-top-left-radius: 2px;
-   border-top-right-radius: 2px;
-}
-
-.cassette__button {
-   z-index: 11;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-}
-
-.cassette__button + .cassette__button {
-   margin-left: 8px;
-}
-
-.cassette__button-name-wrap {
-   display: flex;
-   align-items: center;
-}
-
-.volume-icon {
-   margin-top: 1px;
-   margin-left: 2px;
-}
-
-.cassette__button-name {
-   font-size: 13px;
-   font-weight: 500;
-   color: #0f172a;
-}
-
-.cassette__button-key {
-   width: 60px;
-   height: 85px;
-   margin-top: 14px;
+   bottom: 18px;
    background-color: #cbd5e1;
    border-radius: 6px;
    border: none;
    cursor: pointer;
-   position: relative;
 }
 
-.cassette__button-key::before {
-   content: "";
-   position: absolute;
-   width: 60px;
-   height: 85px;
-   top: 5px;
-   left: 2px;
-   border-radius: 6px;
-   background-color: #94a3b8;
-   z-index: -1;
+.cassette__button-play-inner {
+   width: 72px;
+   height: 56px;
+   display: block;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #334155;
+   border-radius: 4px;
 }
 
-.cassette__button-key.active {
-   height: 90px;
-   background-color: #94a3b8;
-}
-
-.cassette__button-key.active.cassette__button-key::before {
-   display: none;
+.cassette__button-play-icon {
+   display: block;
+   margin-left: 1px;
 }
 
 /* content */
@@ -123,7 +76,7 @@
 }
 
 .content__item + .content__item {
-   margin-top: 50px;
+   margin-top: 46px;
 }
 
 .content__wrap {
@@ -162,7 +115,7 @@
 }
 
 .label__links {
-   margin-top: 28px;
+   margin-top: 26px;
 }
 
 .label__links .content__link {

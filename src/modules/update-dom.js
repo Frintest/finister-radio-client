@@ -4,7 +4,7 @@ import {
 } from "./animate-cassette.js";
 import { API } from "../api.js";
 
-const btnPlay = document.querySelector(".cassette__button-key--play");
+const btnPlay = document.querySelector(".cassette__button-play");
 
 const createOnClickPlayBtn = (audio) => {
    return () => {

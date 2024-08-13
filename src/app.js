@@ -6,7 +6,7 @@ import {
 } from "./modules/update-dom.js";
 
 export const appCreate = () => {
-   const btnPlay = document.querySelector(".cassette__button-key--play");
+   const btnPlay = document.querySelector(".cassette__button-play");
    let audio = null;
    const updateAudioData = (audioData) => {
       const url = audioData.url;
