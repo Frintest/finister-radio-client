@@ -9,6 +9,11 @@
    position: relative;
 }
 
+.cassette__disc {
+   position: absolute;
+   top: 71px;
+}
+
 @keyframes discRotate {
    to {
       transform: rotate(1turn);
@@ -17,11 +22,6 @@
 
 .cassette__disc.active {
    animation: 6s infinite linear discRotate;
-}
-
-.cassette__disc {
-   position: absolute;
-   top: 71px;
 }
 
 .cassette__disc--left {
@@ -58,6 +58,7 @@
    width: 72px;
    height: 56px;
    display: block;
+   position: relative;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -65,9 +66,24 @@
    border-radius: 4px;
 }
 
+.cassette__button-play-inner::before {
+   content: "";
+   position: absolute;
+   width: 72px;
+   height: 56px;
+   top: 0;
+   left: 0;
+   background-image: url(../assets/images/btn-play-bg.png);
+}
+
 .cassette__button-play-icon {
    display: block;
    margin-left: 1px;
+   z-index: 1;
+}
+
+.cassette__button-pause-icon {
+   z-index: 1;
 }
 
 /* content */

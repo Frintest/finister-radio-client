@@ -1,8 +1,9 @@
+import { API } from "../api.js";
+import { changeOnPlayBtn, changeOnPauseBtn } from "./update-cassette-btns.js";
 import {
    addCassetteAnimation,
    removeCassetteAnimation,
 } from "./animate-cassette.js";
-import { API } from "../api.js";
 
 const btnPlay = document.querySelector(".cassette__button-play");
 
@@ -12,8 +13,9 @@ const createOnClickPlayBtn = (audio) => {
          btnPlay.classList.remove("active");
          if (!audio.paused) {
             audio.pause();
+            changeOnPauseBtn();
+            removeCassetteAnimation();
          }
-         removeCassetteAnimation();
       } else {
          btnPlay.classList.add("active");
          if (audio.paused) {
@@ -23,8 +25,9 @@ const createOnClickPlayBtn = (audio) => {
             };
             API.requestCurrentTime(getCurrentTime);
             audio.play();
+            changeOnPlayBtn();
+            addCassetteAnimation();
          }
-         addCassetteAnimation();
       }
    };
 };

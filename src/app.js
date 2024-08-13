@@ -1,4 +1,5 @@
 import { API } from "./api.js";
+import { initPlayBtn } from "./modules/update-cassette-btns.js";
 import { updateContent } from "./modules/update-audio-dom.js";
 import {
    addHandlerClickPlayBtn,
@@ -6,6 +7,8 @@ import {
 } from "./modules/update-dom.js";
 
 export const appCreate = () => {
+   initPlayBtn();
+
    const btnPlay = document.querySelector(".cassette__button-play");
    let audio = null;
    const updateAudioData = (audioData) => {
